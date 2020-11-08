@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/vitalii88/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/vitalii88/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/vitalii88/frontend-project-lvl1#readme",
+  "devDependencies": {
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
 }
