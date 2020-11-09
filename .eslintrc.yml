@@ -1,5 +1,4 @@
 env:
-  browser: true
   es2021: true
   node: true
 extends:
@@ -9,5 +8,6 @@ parserOptions:
   sourceType: module
 rules: {
   import/extensions: 0,
-  no-console: 0
+  no-console: 0,
+  no-await-in-loop: 0
 }
