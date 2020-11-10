@@ -1,11 +1,11 @@
 {
   "name": "@hexlet/code",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "First Hexlet Front-JS project \"Brain Games\"",
   "type": "module",
   "bin": {
     "brain-games": "bin/brain-games.js",
-    "even-games": "bin/brain-even.js"
+    "brain-even": "bin/brain-even.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
