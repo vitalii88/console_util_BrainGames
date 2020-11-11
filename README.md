@@ -9,5 +9,8 @@
 ### Hexlet tests and linter status
 ![Actions Status](/workflows/hexlet-check/badge.svg)
 
-### Install packeg and run first game.
+### Install packeg and gameplay first game.
 [![asciicast](https://asciinema.org/a/eEi14NApFhfzfKhRKMmWUFfFA.svg)](https://asciinema.org/a/eEi14NApFhfzfKhRKMmWUFfFA)
+
+### Gameplay second game.
+[![asciicast](https://asciinema.org/a/g7uPmDDuudNxirlIEJXM9Ddmj.svg)](https://asciinema.org/a/g7uPmDDuudNxirlIEJXM9Ddmj)
