@@ -1,6 +1,7 @@
 const ARR_OF_RULES = [
   ['calc', 'What is the result of the expression?'],
   ['even', 'Answer "yes" if the number is even, otherwise answer "no".'],
+  ['gcd', 'Find the greatest common divisor of given numbers.'],
 ];
 
 const MATH_ACTIONS = ['+', '-', '*'];
