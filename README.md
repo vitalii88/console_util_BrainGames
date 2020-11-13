@@ -17,3 +17,6 @@
 
 ### Gameplay third game.
 [![asciicast](https://asciinema.org/a/CwrMbKKG8ZQKhxfFPhXe2vgU9.svg)](https://asciinema.org/a/CwrMbKKG8ZQKhxfFPhXe2vgU9)
+
+### Gameplay fourth game.
+[![asciicast](https://asciinema.org/a/8roIyHNVg6ib1r3esF17LwiF5.svg)](https://asciinema.org/a/8roIyHNVg6ib1r3esF17LwiF5)

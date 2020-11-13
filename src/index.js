@@ -1,8 +1,9 @@
 import promptly from 'promptly';
+import { ARR_OF_RULES, NUMBER_OF_ROUNDS } from './variables.js';
 import calcGame from './calc.js';
 import evenGame from './even.js';
 import gcdGame from './gcd.js';
-import { ARR_OF_RULES, NUMBER_OF_ROUNDS } from './variables.js';
+import progressionGame from './progression.js';
 import { getRule } from './functions.js';
 
 const startGame = async (gameName) => {
@@ -21,6 +22,9 @@ const startGame = async (gameName) => {
         break;
       case 'gcd':
         result = await gcdGame(name);
+        break;
+      case 'progression':
+        result = await progressionGame(name);
         break;
       default:
         return false;
