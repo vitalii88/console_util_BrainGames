@@ -4,6 +4,7 @@ import calcGame from './calc.js';
 import evenGame from './even.js';
 import gcdGame from './gcd.js';
 import progressionGame from './progression.js';
+import primeGame from './prime.js';
 import { getRule } from './functions.js';
 
 const startGame = async (gameName) => {
@@ -25,6 +26,9 @@ const startGame = async (gameName) => {
         break;
       case 'progression':
         result = await progressionGame(name);
+        break;
+      case 'prime':
+        result = await primeGame(name);
         break;
       default:
         return false;

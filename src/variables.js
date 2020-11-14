@@ -3,6 +3,7 @@ const ARR_OF_RULES = [
   ['even', 'Answer "yes" if the number is even, otherwise answer "no".'],
   ['gcd', 'Find the greatest common divisor of given numbers.'],
   ['progression', 'What number is missing in the progression?'],
+  ['prime', 'Answer "yes" if given number is prime. Otherwise answer "no"'],
 ];
 
 const MATH_ACTIONS = ['+', '-', '*'];
