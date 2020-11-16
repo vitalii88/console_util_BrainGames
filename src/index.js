@@ -1,43 +1,19 @@
 import promptly from 'promptly';
-import { ARR_OF_RULES, NUMBER_OF_ROUNDS } from './variables.js';
-import calcGame from './calc.js';
-import evenGame from './even.js';
-import gcdGame from './gcd.js';
-import progressionGame from './progression.js';
-import primeGame from './prime.js';
-import { getRule } from './functions.js';
 
-const startGame = async (gameName) => {
+export default async function startGame(rule, answerAdnQuestion) {
   console.log('Welcome to the Brain Games!');
   const name = await promptly.prompt('May I have your name? ');
   console.log('Hello ', name, '!');
-  console.log(getRule(gameName, ARR_OF_RULES));
-  let result = '';
-  for (let i = 0; i < NUMBER_OF_ROUNDS; i += 1) {
-    switch (gameName) {
-      case 'calc':
-        result = await calcGame(name);
-        break;
-      case 'even':
-        result = await evenGame(name);
-        break;
-      case 'gcd':
-        result = await gcdGame(name);
-        break;
-      case 'progression':
-        result = await progressionGame(name);
-        break;
-      case 'prime':
-        result = await primeGame(name);
-        break;
-      default:
-        return false;
-    }
-    if (result !== 'Correct!') {
-      return console.log(result);
+  console.log(rule);
+  for (let i = 0; i < answerAdnQuestion.length; i += 1) {
+    const [question, correctResult] = answerAdnQuestion[i];
+    console.log('Question: ', question);
+    const userAnswer = await promptly.prompt('Your answer: ');
+    console.log('userAnswer: ', userAnswer);
+    if (userAnswer !== correctResult.toString()) {
+      return `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctResult}'\nLet's try again, ${name}`;
     }
     console.log('Correct!');
   }
-  return console.log(`Congratulations ${name}!`);
-};
-export default startGame;
+  return `Congratulations ${name}!`;
+}

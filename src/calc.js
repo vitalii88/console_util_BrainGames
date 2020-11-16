@@ -1,6 +1,6 @@
-import promptly from 'promptly';
+import startGame from './index.js';
 import { getRandomArrElement, getRandomInt } from './functions.js';
-import { MATH_ACTIONS } from './variables.js';
+import { MATH_ACTIONS, NUMBER_OF_ROUNDS } from './variables.js';
 
 function getCorrectResult(x, y, action) {
   if (action === '+') return x + y;
@@ -9,17 +9,17 @@ function getCorrectResult(x, y, action) {
   return false;
 }
 
-async function calcGame(name) {
-  const x = getRandomInt();
-  const y = getRandomInt();
-  const action = getRandomArrElement(MATH_ACTIONS);
-  const correctResult = getCorrectResult(x, y, action);
-  const question = `Question: ${x} ${action} ${y} `;
-  console.log(question);
-  const userAnswer = await promptly.prompt('Your answer: ');
-  if (String(userAnswer) !== String(correctResult)) {
-    return `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctResult}'\nLet's try again, ${name}`;
+export default async function calcGame() {
+  const rule = 'What is the result of the expression?';
+  const answerAndQuestion = [];
+  for (let i = 0; i < NUMBER_OF_ROUNDS; i += 1) {
+    const x = getRandomInt();
+    const y = getRandomInt();
+    const action = getRandomArrElement(MATH_ACTIONS);
+    const correctResult = getCorrectResult(x, y, action);
+    const question = `Question: ${x} ${action} ${y} `;
+    answerAndQuestion.push([question, correctResult]);
   }
-  return 'Correct!';
+  const result = await startGame(rule, answerAndQuestion);
+  return console.log(result);
 }
-export default calcGame;

@@ -1,5 +1,6 @@
-import promptly from 'promptly';
 import { getRandomInt } from './functions.js';
+import { NUMBER_OF_ROUNDS } from './variables.js';
+import startGame from './index.js';
 
 function getProgression() {
   let iterationOfProgression = getRandomInt();
@@ -20,16 +21,16 @@ function hideIndexInProgress(arr, index) {
   return progression.join(' ');
 }
 
-export default async function progressionGame(name) {
-  const progression = getProgression();
-
-  const replaceableIndex = getRandomInt(0, 9);
-  const correctResult = progression[replaceableIndex];
-  const question = hideIndexInProgress(progression, replaceableIndex);
-  console.log('Question: ', question);
-  const userAnswer = await promptly.prompt('Your answer: ');
-  if (String(userAnswer) !== String(correctResult)) {
-    return `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctResult}'\nLet's try again, ${name}`;
+export default async function progressionGame() {
+  const rule = 'What number is missing in the progression?';
+  const answerAndQuestion = [];
+  for (let i = 0; i < NUMBER_OF_ROUNDS; i += 1) {
+    const progression = getProgression();
+    const replaceableIndex = getRandomInt(0, 9);
+    const correctResult = progression[replaceableIndex];
+    const question = hideIndexInProgress(progression, replaceableIndex);
+    answerAndQuestion.push([question, correctResult]);
   }
-  return 'Correct!';
+  const result = await startGame(rule, answerAndQuestion);
+  return console.log(result);
 }

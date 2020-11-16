@@ -1,5 +1,6 @@
-import promptly from 'promptly';
 import { getRandomInt } from './functions.js';
+import startGame from './index.js';
+import { NUMBER_OF_ROUNDS } from './variables.js';
 
 function isPrime(num) {
   if (num <= 1) return false;
@@ -9,13 +10,14 @@ function isPrime(num) {
   return true;
 }
 
-export default async function primeGame(name) {
-  const question = getRandomInt();
-  const correctResult = isPrime(question) === true ? 'yes' : 'no';
-  console.log('Question: ', question);
-  const userAnswer = await promptly.prompt('Your answer: ');
-  if (String(userAnswer) !== String(correctResult)) {
-    return `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctResult}'\nLet's try again, ${name}`;
+export default async function primeGame() {
+  const rule = 'Answer "yes" if given number is prime. Otherwise answer "no"';
+  const answerAndQuestion = [];
+  for (let i = 0; i < NUMBER_OF_ROUNDS; i += 1) {
+    const question = getRandomInt();
+    const correctResult = isPrime(question) === true ? 'yes' : 'no';
+    answerAndQuestion.push([question, correctResult]);
   }
-  return 'Correct!';
+  const result = await startGame(rule, answerAndQuestion);
+  return console.log(result);
 }
