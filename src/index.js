@@ -7,9 +7,9 @@ export default async function startGame(rule, answerAdnQuestion) {
   console.log(rule);
   for (let i = 0; i < answerAdnQuestion.length; i += 1) {
     const [question, correctResult] = answerAdnQuestion[i];
-    console.log('Question: ', question);
+    console.log('Question:', question);
     const userAnswer = await promptly.prompt('Your answer: ');
-    console.log('userAnswer: ', userAnswer);
+    console.log('userAnswer:', userAnswer);
     if (userAnswer !== correctResult.toString()) {
       return `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctResult}'\nLet's try again, ${name}!`;
     }
