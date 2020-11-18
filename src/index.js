@@ -4,7 +4,7 @@ export default async function startGame(rule, answerAdnQuestion) {
   console.log('Welcome to the Brain Games!');
   const name = await promptly.prompt('May I have your name? ');
   // console.log('Hello ', name, '!');
-  console.log(`'Hello, ${name}!`);
+  console.log(`Hello, ${name}!`);
   console.log(rule);
   for (let i = 0; i < answerAdnQuestion.length; i += 1) {
     const [question, correctResult] = answerAdnQuestion[i];
