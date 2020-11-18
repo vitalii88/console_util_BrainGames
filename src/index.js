@@ -15,5 +15,5 @@ export default async function startGame(rule, answerAdnQuestion) {
     }
     console.log('Correct!');
   }
-  return `Congratulations ${name}!`;
+  return `Congratulations, ${name}!`;
 }
