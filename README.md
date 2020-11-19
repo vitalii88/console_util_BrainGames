@@ -7,7 +7,7 @@
 ![Node CI](https://github.com/vitalii88/frontend-project-lvl1/workflows/Node%20CI/badge.svg)
 
 ### Hexlet tests and linter status
-![Actions Status](/workflows/hexlet-check/badge.svg)
+![Actions Status](https://github.com/vitalii88/frontend-project-lvl1//workflows/hexlet-check/badge.svg)
 
 ### Install packeg and gameplay first game.
 [![asciicast](https://asciinema.org/a/eEi14NApFhfzfKhRKMmWUFfFA.svg)](https://asciinema.org/a/eEi14NApFhfzfKhRKMmWUFfFA)
