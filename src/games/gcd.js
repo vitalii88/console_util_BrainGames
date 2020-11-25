@@ -1,6 +1,5 @@
-import { getRandomInt } from './functions.js';
-import { NUMBER_OF_ROUNDS } from './variables.js';
-import startGame from './index.js';
+import { getRandomInt } from '../lib/functions.js';
+import startGame, { NUMBER_OF_ROUNDS } from '../index.js';
 
 function getGcd(x, y) {
   let numX = x;
@@ -25,7 +24,5 @@ export default async function gcdGame() {
     const question = `Question: ${randomX} ${randomY}`;
     answerAndQuestion.push([question, correctResult]);
   }
-  // console.log(answerAndQuestion);
-  const result = await startGame(rule, answerAndQuestion);
-  return console.log(result);
+  startGame(rule, answerAndQuestion);
 }

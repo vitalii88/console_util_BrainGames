@@ -1,6 +1,5 @@
-import { getRandomInt } from './functions.js';
-import startGame from './index.js';
-import { NUMBER_OF_ROUNDS } from './variables.js';
+import { getRandomInt } from '../lib/functions.js';
+import startGame, { NUMBER_OF_ROUNDS } from '../index.js';
 
 function isPrime(num) {
   if (num <= 1) return false;
@@ -18,6 +17,5 @@ export default async function primeGame() {
     const correctResult = isPrime(question) === true ? 'yes' : 'no';
     answerAndQuestion.push([question, correctResult]);
   }
-  const result = await startGame(rule, answerAndQuestion);
-  return console.log(result);
+  startGame(rule, answerAndQuestion);
 }

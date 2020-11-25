@@ -1,5 +1,7 @@
 import promptly from 'promptly';
 
+const NUMBER_OF_ROUNDS = 3;
+
 export default async function startGame(rule, answerAdnQuestion) {
   console.log('Welcome to the Brain Games!');
   const name = await promptly.prompt('May I have your name? ');
@@ -12,9 +14,10 @@ export default async function startGame(rule, answerAdnQuestion) {
     const userAnswer = await promptly.prompt('Your answer: ');
     console.log('userAnswer:', userAnswer);
     if (userAnswer !== correctResult.toString()) {
-      return `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctResult}'\nLet's try again, ${name}!`;
+      return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctResult}'\nLet's try again, ${name}!`);
     }
     console.log('Correct!');
   }
   return `Congratulations, ${name}!`;
 }
+export { NUMBER_OF_ROUNDS };

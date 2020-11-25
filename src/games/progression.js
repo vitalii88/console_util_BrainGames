@@ -1,6 +1,5 @@
-import { getRandomInt } from './functions.js';
-import { NUMBER_OF_ROUNDS } from './variables.js';
-import startGame from './index.js';
+import { getRandomInt } from '../lib/functions.js';
+import startGame, { NUMBER_OF_ROUNDS } from '../index.js';
 
 function getProgression() {
   let iterationOfProgression = getRandomInt();
@@ -31,6 +30,5 @@ export default async function progressionGame() {
     const question = hideIndexInProgress(progression, replaceableIndex);
     answerAndQuestion.push([question, correctResult]);
   }
-  const result = await startGame(rule, answerAndQuestion);
-  return console.log(result);
+  startGame(rule, answerAndQuestion);
 }
