@@ -1,8 +1,8 @@
-import { getRandomInt } from '../lib/functions.js';
+import { getRandomInt, isEven } from '../lib/functions.js';
 import startGame, { NUMBER_OF_ROUNDS } from '../index.js';
 
 function getCorrectResult(rundomNumber) {
-  return rundomNumber % 2 === 0 ? 'yes' : 'no';
+  return isEven(rundomNumber) ? 'yes' : 'no';
 }
 
 export default async function evenGame() {

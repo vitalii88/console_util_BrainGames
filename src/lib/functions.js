@@ -4,17 +4,46 @@ function getRandomInt(minRange = 1, maxRage = 100) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function getRandomArrElement(arrayOfElements) {
-  return arrayOfElements[Math.floor(Math.random() * arrayOfElements.length)];
-}
-
-function getRule(gameName, arrOfRules) {
-  let ruleText = '';
-  for (let i = 0; i < arrOfRules.length; i += 1) {
-    const [game, rule] = arrOfRules[i];
-    if (game === gameName) ruleText = rule;
+function getGcd(x, y) {
+  let numX = x;
+  let numY = y;
+  while (numX !== numY) {
+    if (numX > numY) {
+      numX -= numY;
+    } else {
+      numY -= numX;
+    }
   }
-  return ruleText;
+  return numX;
 }
 
-export { getRandomInt, getRandomArrElement, getRule };
+function isPrime(num) {
+  if (num <= 1) return false;
+  for (let i = 2; i <= num / 2; i += 1) {
+    if (num % i === 0) return false;
+  }
+  return true;
+}
+function getProgression() {
+  let iterationOfProgression = getRandomInt();
+  const progressionStep = getRandomInt(1, 30);
+  const progressionLenght = 10;
+  const progression = [];
+  for (let i = 0; i < progressionLenght; i += 1) {
+    progression.push(iterationOfProgression);
+    iterationOfProgression += progressionStep;
+  }
+  return progression;
+}
+
+const getSum = (x, y) => x + y;
+
+const getDifference = (x, y) => x - y;
+
+const getMultiplication = (x, y) => x * y;
+
+const isEven = (number) => number % 2 === 0;
+
+export {
+  getRandomInt, getSum, getDifference, getMultiplication, isEven, getGcd, isPrime, getProgression,
+};

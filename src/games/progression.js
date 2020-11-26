@@ -1,17 +1,5 @@
-import { getRandomInt } from '../lib/functions.js';
+import { getRandomInt, getProgression } from '../lib/functions.js';
 import startGame, { NUMBER_OF_ROUNDS } from '../index.js';
-
-function getProgression() {
-  let iterationOfProgression = getRandomInt();
-  const progressionStep = getRandomInt(1, 30);
-  const progressionLenght = 10;
-  const progression = [];
-  for (let i = 0; i < progressionLenght; i += 1) {
-    progression.push(iterationOfProgression);
-    iterationOfProgression += progressionStep;
-  }
-  return progression;
-}
 
 function hideIndexInProgress(arr, index) {
   const holder = '..';

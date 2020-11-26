@@ -1,10 +1,12 @@
 import startGame, { NUMBER_OF_ROUNDS } from '../index.js';
-import { getRandomInt } from '../lib/functions.js';
+import {
+  getRandomInt, getSum, getDifference, getMultiplication,
+} from '../lib/functions.js';
 
 function getCorrectResult(x, y, action) {
-  if (action === '+') return x + y;
-  if (action === '-') return x - y;
-  if (action === '*') return x * y;
+  if (action === '+') return getSum(x, y);
+  if (action === '-') return getDifference(x, y);
+  if (action === '*') return getMultiplication(x, y);
   return false;
 }
 
