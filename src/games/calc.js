@@ -1,18 +1,23 @@
 import startGame, { NUMBER_OF_ROUNDS } from '../index.js';
-import {
-  getRandomInt, getSum, getDifference, getMultiplication,
-} from '../lib/functions.js';
+import getRandomInt from '../utils.js';
 
-function getCorrectResult(x, y, action) {
-  if (action === '+') return getSum(x, y);
-  if (action === '-') return getDifference(x, y);
-  if (action === '*') return getMultiplication(x, y);
-  return false;
+const rule = 'What is the result of the expression?';
+
+function getCorrectResult(x, y, operator) {
+  switch (operator) {
+    case '+':
+      return x + y;
+    case '-':
+      return x - y;
+    case '*':
+      return x * y;
+    default:
+      throw new Error(`Unknown operator: ${operator}`);
+  }
 }
 
-export default async function calcGame() {
+export default function calcGame() {
   const mathActions = ['+', '-', '*'];
-  const rule = 'What is the result of the expression?';
   const answerAndQuestion = [];
   for (let i = 0; i < NUMBER_OF_ROUNDS; i += 1) {
     const x = getRandomInt();
