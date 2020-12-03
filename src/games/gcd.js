@@ -21,7 +21,7 @@ export default function gcdGame() {
   for (let i = 0; i < NUMBER_OF_ROUNDS; i += 1) {
     const randomX = getRandomInt();
     const randomY = getRandomInt();
-    const correctResult = getGcd(randomX, randomY);
+    const correctResult = getGcd(randomX, randomY).toString();
     const question = `Question: ${randomX} ${randomY}`;
     answerAndQuestion.push([question, correctResult]);
   }

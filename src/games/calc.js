@@ -23,7 +23,7 @@ export default function calcGame() {
     const x = getRandomInt();
     const y = getRandomInt();
     const action = mathActions[getRandomInt(0, mathActions.length)];
-    const correctResult = getCorrectResult(x, y, action);
+    const correctResult = getCorrectResult(x, y, action).toString();
     const question = `Question: ${x} ${action} ${y} `;
     answerAndQuestion.push([question, correctResult]);
   }

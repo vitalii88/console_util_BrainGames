@@ -12,11 +12,13 @@ export default async function startGame(rule, answerAdnQuestion) {
     const [question, correctResult] = answerAdnQuestion[i];
     console.log('Question:', question);
     const userAnswer = await promptly.prompt('Your answer: ');
-    if (userAnswer !== correctResult.toString()) {
-      return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctResult}'\nLet's try again, ${name}!`);
+    if (userAnswer !== correctResult) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctResult}'\nLet's try again, ${name}!`);
+      return false;
     }
     console.log('Correct!');
   }
-  return console.log(`Congratulations, ${name}!`);
+  console.log(`Congratulations, ${name}!`);
+  return true;
 }
 export { NUMBER_OF_ROUNDS };
